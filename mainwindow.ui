@@ -1,24 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1059</width>
+    <height>655</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="clientPortLabel">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>80</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Client Port</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="clientMessageLabel">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>180</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Message</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="clientMessageLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>180</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clientPortPushButton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>120</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Create Socket</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clientMessagePushButton">
+    <property name="geometry">
+     <rect>
+      <x>102</x>
+      <y>230</y>
+      <width>191</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send Message to Server</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="clientLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>430</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Server's Message:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="clientPortLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="clientReceiveMessageLabel">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>440</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nothing</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="serverMessagePushButton">
+    <property name="geometry">
+     <rect>
+      <x>662</x>
+      <y>230</y>
+      <width>191</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send Message to Client</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="serverPortPushButton">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>120</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Create Socket</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="serverPortLabel">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>80</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Client Port</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="serverPortLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="serverMessageLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>180</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="serverReceiveMessageLabel">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>440</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nothing</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="serverLabel">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>430</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Client's Message:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="serverMessageLabel">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>180</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Message</string>
+    </property>
+   </widget>
+   <zorder>clientPortLabel</zorder>
+   <zorder>clientPortLineEdit</zorder>
+   <zorder>clientMessageLabel</zorder>
+   <zorder>clientMessageLineEdit</zorder>
+   <zorder>clientPortPushButton</zorder>
+   <zorder>clientMessagePushButton</zorder>
+   <zorder>clientLabel</zorder>
+   <zorder>clientReceiveMessageLabel</zorder>
+   <zorder>serverMessagePushButton</zorder>
+   <zorder>serverPortPushButton</zorder>
+   <zorder>serverPortLabel</zorder>
+   <zorder>serverPortLineEdit</zorder>
+   <zorder>serverMessageLineEdit</zorder>
+   <zorder>serverReceiveMessageLabel</zorder>
+   <zorder>serverLabel</zorder>
+   <zorder>serverMessageLabel</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1059</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
