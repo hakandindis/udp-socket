@@ -3,15 +3,16 @@
 Socket::Socket(quint16 _port): port(_port)
 {
     this->bind(QHostAddress::LocalHost,port);
+    qDebug()<<"socket binded,"<<"port: "<<port;
 }
 
 
-void Socket::sendData(QString message){
+void Socket::sendData(QString message,quint16 sendPort){
 
     QByteArray buffer;
 
     buffer= message.toUtf8();
-    this->writeDatagram(buffer.data(),QHostAddress::LocalHost,port);
+    this->writeDatagram(buffer.data(),QHostAddress::LocalHost,sendPort);
 }
 
 

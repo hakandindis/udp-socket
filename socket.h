@@ -8,7 +8,7 @@ class Socket : public QUdpSocket
 {
 public:
     Socket(quint16);
-    void sendData(QString);
+    void sendData(QString,quint16);
     QString receiveData();
 
 private:

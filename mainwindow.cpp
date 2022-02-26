@@ -6,16 +6,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    //connect(socket,SIGNAL(readyRead()),this,SLOT());
-
-    //server = new Socket(8001);
-    //client = new Socket(7000);
-
-    //connect(server,SIGNAL(readyRead()),this,SLOT(updateUI()));
-    //connect(server,SIGNAL(readyRead()),this,SLOT(updateUI()));
-
-
 }
 
 MainWindow::~MainWindow()
@@ -24,19 +14,22 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::updateClientUI(){
 
-void MainWindow::updateUI(){
+    QString message;
 
-    QString clientMessage;
-    QString serverMessage;
-
-    serverMessage = server->receiveData();
-    clientMessage = client->receiveData();
-
-    ui->clientReceiveMessageLabel->setText(serverMessage);
-    ui->serverReceiveMessageLabel->setText(clientMessage);
-
+    message = client->receiveData();
+    ui->clientReceiveMessageLabel->setText(message);
 }
+
+void MainWindow::updateServerUI(){
+
+    QString message;
+
+    message = server->receiveData();
+    ui->serverReceiveMessageLabel->setText(message);
+}
+
 
 void MainWindow::on_clientPortPushButton_clicked()
 {
@@ -44,7 +37,7 @@ void MainWindow::on_clientPortPushButton_clicked()
    clientPort = (quint16)portS.toUInt();
 
    client = new Socket(clientPort);
-   connect(client,SIGNAL(readyRead()),this,SLOT(updateUI()));
+   connect(client,SIGNAL(readyRead()),this,SLOT(updateClientUI()));
    qDebug()<<"client socket created";
 
 }
@@ -55,7 +48,7 @@ void MainWindow::on_serverPortPushButton_clicked()
     serverPort = (quint16)portS.toUInt();
 
     server = new Socket(serverPort);
-    connect(server,SIGNAL(readyRead()),this,SLOT(updateUI()));
+    connect(server,SIGNAL(readyRead()),this,SLOT(updateServerUI()));
     qDebug()<<"server socket created";
 }
 
@@ -63,12 +56,12 @@ void MainWindow::on_clientMessagePushButton_clicked()
 {
     QString message= ui->clientMessageLineEdit->text();
     //ui->clientMessageLineEdit->setText("");
-    client->sendData(message);
+    client->sendData(message,serverPort);
 }
 
 void MainWindow::on_serverMessagePushButton_clicked()
 {
     QString message = ui->serverMessageLineEdit->text();
     //ui->serverMessageLineEdit->setText("");
-    server->sendData(message);
+    server->sendData(message,clientPort);
 }

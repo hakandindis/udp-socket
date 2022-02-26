@@ -25,7 +25,8 @@ private:
     quint16 clientPort;
 
 public slots:
-    void updateUI();
+    void updateServerUI();
+    void updateClientUI();
 private slots:
     void on_clientPortPushButton_clicked();
     void on_serverPortPushButton_clicked();
